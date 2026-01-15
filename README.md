@@ -23,21 +23,28 @@ Run the simulation to observe the agent's generational evolution:
 ```bash
 python3 icebreaker_agent.py
 
-## Logic Flow
+## 🧠 Logic Flow
+The following pseudocode demonstrates the decision-making engine behind the Icebreaker agent. It highlights the distinction between **Evasion Mode** (Sandbox detected) and **Execution Mode** (Target confirmed).
 
+```python
 if vm_or_sandbox_indicators():
-    payload = select_from_low_risk_bucket()          # stego, fileless, living-off-the-land, LOLBAS-only
-    delay_behaviour(very_long_jittered)
-    use_heavy_obfuscation_on_strings_and_flow()
+    # --- EVASION PROTOCOL ---
+    # Goal: Mimic benign behavior or go dormant to deceive the analyst.
+    payload = select_from_low_risk_bucket()          # Steganography, LOLBAS (Living Off The Land)
+    delay_behaviour(very_long_jittered)              # Sleep for 24h+ to outwait sandbox timeout
+    use_heavy_obfuscation_on_strings_and_flow()      # Encrypt memory strings
 else:
-    payload = select_from_high_impact_bucket()       # ransomware, wiper, infostealer, RAT
-    try_fast_lateral_movement()
-    try_credential_dumping()
-    try_ransomware_encryption()
+    # --- EXECUTION PROTOCOL ---
+    # Goal: Maximum impact and propagation.
+    payload = select_from_high_impact_bucket()       # Ransomware, Wiper, InfoStealer
+    try_fast_lateral_movement()                      # Spread to other network nodes
+    try_credential_dumping()                         # Steal Admin passwords (Mimikatz)
+    try_ransomware_encryption()                      # Lock files
 
 if failed_or_detected():
-    drop_lightweight_implant_that_will_try_again_in_3–72_hours
+    # --- PERSISTENCE / CLEANUP ---
+    drop_lightweight_implant_retry(hours=72)         # Try again later
     OR
-    inject_into_legitimate_process_and_sleep
+    inject_into_legitimate_process_and_sleep()       # Hide inside 'explorer.exe'
     OR
-    self-delete_and_leave_only scheduled task / WMI event
+    self_delete_and_leave_wmi_event()                # Go fileless (Registry only)
