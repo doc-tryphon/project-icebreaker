@@ -1,2 +1,24 @@
-# project-icebreaker
-A Proof-of-Concept simulation of a metaheuristic malware agent. Uses primitive genetic algorithms to adapt strategies and mutate identity signatures based on environmental analysis.
+# Project Icebreaker: Metaheuristic Agent Simulation (PoC)
+
+## Overview
+This repository contains a Python simulation of a **Metaheuristic Malware Agent**. It explores the theoretical concepts of "Automated Adaptation" and "Polymorphism" in offensive security.
+
+The script models an agent that does not rely on static attack vectors. Instead, it uses a primitive **Genetic Algorithm** approach to:
+1.  **Sense its Environment:** Detect if it is being observed (Sandbox/VM detection).
+2.  **Mutate Identity:** Generate unique SHA-256 signatures for every instance (Polymorphism).
+3.  **Evolve Strategy:** Dynamically switch between stealth (Steganography) and aggression (Brute Force) based on environmental feedback.
+
+## Conceptual Origins
+This project serves as a practical study of concepts found in:
+* **Adversarial Machine Learning:** How AI agents adapt to defensive countermeasures.
+* **Practical Malware Analysis:** The mechanics of signature evasion.
+* **Cybernetic Theory:** The concept of "Icebreakers" or self-optimizing code in hostile networks (inspired by *Serial Experiments Lain* and *Cyberpunk 2077*).
+
+## Disclaimer
+**EDUCATIONAL USE ONLY.**
+This code is a **simulation**. It contains no weaponized payloads, exploits, or harmful functions. It is a logic model designed to demonstrate how polymorphic engines make decisions.
+
+## Usage
+Run the simulation to observe the agent's generational evolution:
+```bash
+python3 icebreaker_agent.py
