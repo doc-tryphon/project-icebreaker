@@ -22,3 +22,22 @@ This code is a **simulation**. It contains no weaponized payloads, exploits, or 
 Run the simulation to observe the agent's generational evolution:
 ```bash
 python3 icebreaker_agent.py
+
+## Logic Flow
+
+if vm_or_sandbox_indicators():
+    payload = select_from_low_risk_bucket()          # stego, fileless, living-off-the-land, LOLBAS-only
+    delay_behaviour(very_long_jittered)
+    use_heavy_obfuscation_on_strings_and_flow()
+else:
+    payload = select_from_high_impact_bucket()       # ransomware, wiper, infostealer, RAT
+    try_fast_lateral_movement()
+    try_credential_dumping()
+    try_ransomware_encryption()
+
+if failed_or_detected():
+    drop_lightweight_implant_that_will_try_again_in_3–72_hours
+    OR
+    inject_into_legitimate_process_and_sleep
+    OR
+    self-delete_and_leave_only scheduled task / WMI event
