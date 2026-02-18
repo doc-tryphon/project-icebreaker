@@ -93,10 +93,3 @@ class MetaHeuristicAgent:
         # Create a new instance (child) with new hash and new learning
         next_gen = MetaHeuristicAgent(generation=self.generation + 1)
         next_gen.execute()
-
-
-# --- RUN SIMULATION ---
-if __name__ == "__main__":
-    # Simulate the first drop
-    dropper = MetaHeuristicAgent()
-    dropper.execute()
