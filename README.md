@@ -1,5 +1,7 @@
 # Project Icebreaker: Metaheuristic Agent Simulation (PoC)
 
+![CI](https://github.com/doc-tryphon/project-icebreaker/actions/workflows/ci.yml/badge.svg)
+
 ## Overview
 This repository contains a Python simulation of a **Metaheuristic Malware Agent**. It explores the theoretical concepts of "Automated Adaptation" and "Polymorphism" in offensive security.
 
