@@ -18,10 +18,30 @@ This project serves as a practical study of concepts found in:
 **EDUCATIONAL USE ONLY.**
 This code is a **simulation**. It contains no weaponized payloads, exploits, or harmful functions. It is a logic model designed to demonstrate how polymorphic engines make decisions.
 
-## Usage
-Run the simulation to observe the agent's generational evolution:
+## Setup
+
 ```bash
-python3 icebreaker_agent.py
+# Clone the repo
+git clone git@github.com:doc-tryphon/project-icebreaker.git
+cd project-icebreaker
+
+# Create and activate a virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Install dev dependencies
+pip install -r requirements.txt
+```
+
+## Usage
+
+```bash
+# Run the simulation
+python -m icebreaker.agent
+
+# Run tests
+pytest
+```
 
 ## 🧠 Logic Flow
 The following pseudocode demonstrates the decision-making engine behind the Icebreaker agent. It highlights the distinction between **Evasion Mode** (Sandbox detected) and **Execution Mode** (Target confirmed).
@@ -44,7 +64,8 @@ else:
 if failed_or_detected():
     # --- PERSISTENCE / CLEANUP ---
     drop_lightweight_implant_retry(hours=72)         # Try again later
-    OR
+    # OR
     inject_into_legitimate_process_and_sleep()       # Hide inside 'explorer.exe'
-    OR
+    # OR
     self_delete_and_leave_wmi_event()                # Go fileless (Registry only)
+```
