@@ -1,0 +1,11 @@
+# Personal/private documents - never commit these
+docs/MENTOR_MEETING_BRIEF.md
+docs/MEETING_QUICK_REFERENCE.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+.venv/
