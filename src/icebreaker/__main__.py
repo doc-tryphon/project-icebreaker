@@ -1,4 +1,4 @@
 from icebreaker.agent import MetaHeuristicAgent
 
-dropper = MetaHeuristicAgent()
-dropper.execute()
+agent = MetaHeuristicAgent()
+agent.execute()
